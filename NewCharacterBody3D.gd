@@ -14,13 +14,12 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * MOVE_SENSITIVITY))
 
-func _joystick_input(): #Change these controls to gamepad
+func _joystick_input(): 
 	var joyview = Vector2()
 	if (Input.is_action_pressed("ui_left") ||  Input.is_action_pressed("ui_right")):
 		joyview.x = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
 		rotate_y(deg_to_rad(joyview.x * MOVE_SENSITIVITY * 10))
 		
-		#"ui_focus_next"
 func _process(_delta):
 	return
 	
