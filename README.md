@@ -13,7 +13,7 @@ Modified version of the default CharacterBody3D script provided in Godot 4. incl
 
 # Usage
 
-- Create a CharacterBody3D node and attatch this player script.
+- Create a CharacterBody3D node and attach the NewCharacterBody3D.gd player script.
 - Add a camera as a child (As a child of a SpringArm for 3rd person).
 - Place the camera/SpringArm height and distance to preference
 
