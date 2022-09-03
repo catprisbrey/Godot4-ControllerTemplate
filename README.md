@@ -1,4 +1,4 @@
-# 3rdPersonBasicTemplate
+# Godot 4 - Third Person template
 Modified version of the default CharacterBody3D script provided in Godot 4. includes body/camera rotation, and addtioanl control options.
 
 
