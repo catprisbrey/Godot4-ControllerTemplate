@@ -2,7 +2,7 @@
 Modified version of the default CharacterBody3D script provided in Godot 4. includes body/camera rotation, and addtional control options.
 
 
-![Controller Screenshot](https://github.com/pemguin005/3rdPersonBasicTemplate/blob/main/Example.GIF)
+![Controller Screenshot](https://github.com/pemguin005/Godot4-ControllerTemplate/blob/main/Example.GIF)
 
 # Features
 
