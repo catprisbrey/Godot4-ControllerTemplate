@@ -27,9 +27,14 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(0, 0, input_dir.y)).normalized() 
-	var turning = rotate_y(deg_to_rad(-input_dir.x * MOVE_SENSITIVITY * 10)) # Key/Joy controlled rotation
-
+	var direction = (transform.basis * Vector3(0, 0, input_dir.y)).normalized()
+	
+	# Strafe input
+	if Input.is_action_pressed("ui_focus_next"):
+		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	else:
+		rotate_y(deg_to_rad(-input_dir.x * MOVE_SENSITIVITY * 10))
+		
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
