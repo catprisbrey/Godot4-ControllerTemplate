@@ -1,6 +1,5 @@
 # Godot 4 - Controller template
-Modified version of the default CharacterBody3D script provided in Godot 4. includes body/camera rotation, and addtional control options.
-
+Modified version of the default CharacterBody3D script provided in Godot 4. includes  strafing, rotation, jumping, and uses only standard UI key mappings. Depending on where you place your camera node, this controller will work for fixed overhead, 1st, and 3rd person games.
 
 ![Controller Screenshot](https://github.com/pemguin005/Godot4-ControllerTemplate/blob/main/Example.GIF)
 
@@ -17,7 +16,7 @@ Modified version of the default CharacterBody3D script provided in Godot 4. incl
 
 - Create a CharacterBody3D node
 - Attach the NewCharacterBody3D.gd player script.
-- Add a camera as a child (or as a child of a SpringArm for 3rd person camera).
+- Add a camera (Fixed for topdown, as a child for FPS, or as a child of a SpringArm for TPS) 
 - Place the camera/SpringArm height and distance to preference
 
 # Notes
