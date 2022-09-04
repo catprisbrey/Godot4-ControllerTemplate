@@ -19,16 +19,13 @@ func _joystick_input():
 	if (Input.is_action_pressed("ui_left") ||  Input.is_action_pressed("ui_right")):
 		joyview.x = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
 		rotate_y(deg_to_rad(joyview.x * MOVE_SENSITIVITY * 10))
-		
-func _process(_delta):
-	return
 	
 func _physics_process(delta):
 	_joystick_input()
 	
 	# Add the gravity.
 	if not is_on_floor():
-			velocity.y -= gravity * delta
+		velocity.y -= gravity * delta
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
