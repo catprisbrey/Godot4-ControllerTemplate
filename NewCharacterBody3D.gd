@@ -13,15 +13,8 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * MOVE_SENSITIVITY))
-
-func _joystick_input(): 
-	var joyview = Vector2()
-	if (Input.is_action_pressed("ui_left") ||  Input.is_action_pressed("ui_right")):
-		joyview.x = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
-		rotate_y(deg_to_rad(joyview.x * MOVE_SENSITIVITY * 10))
 	
 func _physics_process(delta):
-	_joystick_input()
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -34,7 +27,8 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(0, 0, input_dir.y)).normalized()
+	var direction = (transform.basis * Vector3(0, 0, input_dir.y)).normalized() 
+	var turning = rotate_y(deg_to_rad(-input_dir.x * MOVE_SENSITIVITY * 10)) # Key/Joy controlled rotation
 
 	if direction:
 		velocity.x = direction.x * SPEED
